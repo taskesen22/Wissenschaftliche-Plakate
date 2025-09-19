@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Wissenschaftliche Plakate — Quellen</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
   body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e0f7fa, #fff9c4);
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
     color: #333;
   }
 
   header {
-    background: linear-gradient(90deg, #004aad, #007bff);
+    position: relative;
+    background-color: #6a1b9a;
     color: white;
-    padding: 30px 20px;
+    padding: 60px 20px 100px 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO3dQW7DIBAF0KYHT2v8fzquIOayEC/4MLMJCTzGYfLEpIQcXxcNDvfciG6rtbZ8CD1Y1AOR1CrKYY7wB4Yg+4EiA2jUuJ+AAzDruVYloKoKqrMStUvftBMY7gT3Q3yRql0mB9bMfeyGLP3+DeT2uqnEHjJ4hOabf+rH+Ag67At1QerT+36L6vm2x+/QfFZ/WuKZ+7++YOAs3R/+8HOIQvAON1k//aI60fJdP9ykv38Vb0HBA/X19Z0F5eD5neJ60f9A9/8EY5AogJoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyB+vfQX5+uKZnGVLkDjWzftjH1f47nsg5Zey0LVDLU4f4T3wlF8K8iJvD5w+O9a9Wz4cn0l+X+7c5MubH1XYG1HTZBu0O8jkDWmjvCsq3S+a9IhGj+RJoN6TsBT6YO6AsTz5ZOwP9G+MHXXE16PbXDnA1A72/R7k97+Cyb37ds6XuzmfkPPuHTxl5syPtjA1k4YPU+QF4Vt6cROp2yfIcZUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BqX9e7/CAy6i7Ete8phvAAAAAElFTkSuQmCC');
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    background-position: center top 30px;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(106,27,154, 0.6); /* mor overlay */
+    z-index: 1;
+  }
+
+  header h1, header p {
+    position: relative;
+    z-index: 2;
   }
 
   header h1 {
-    font-size: 2.5rem;
-    margin: 0 0 10px;
+    font-size: 3rem;
+    margin: 80px 0 10px; /* görselin altına yazıyı çekmek için üst boşluk artırıldı */
   }
 
   header p {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     margin: 0;
   }
 
   main {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 80px auto;
     padding: 0 20px;
   }
 
   h2.center {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #004aad;
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+    color: #6a1b9a;
   }
 
   .columns {
@@ -57,10 +75,14 @@
 
   .column {
     flex: 1 1 45%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 30px;
   }
 
   ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
   }
@@ -69,46 +91,40 @@
     margin: 20px 0;
   }
 
-  a {
-    display: block;
+  a.button {
+    display: inline-block;
     text-decoration: none;
     color: white;
-    background: linear-gradient(135deg, #007bff, #00c6ff);
-    padding: 15px 20px;
-    border-radius: 15px;
+    background: linear-gradient(135deg, #8e24aa, #ba68c8);
+    padding: 15px 25px;
+    border-radius: 50px;
     font-weight: 700;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  a:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-  }
-
-  a span {
-    font-weight: 400;
-    font-size: 0.9rem;
-    display: block;
-    margin-top: 5px;
+  a.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
   }
 
   h2.column-title {
-    color: #007bff;
-    margin-bottom: 20px;
-    border-left: 5px solid #004aad;
-    padding-left: 10px;
-    font-size: 1.5rem;
+    color: #8e24aa;
+    margin-bottom: 25px;
+    border-left: 5px solid #6a1b9a;
+    padding-left: 15px;
+    font-size: 1.8rem;
   }
 
   footer {
     text-align: center;
-    padding: 30px;
+    padding: 40px 20px;
     color: #555;
     font-size: 0.9em;
     border-top: 1px solid #ddd;
-    margin-top: 50px;
+    margin-top: 80px;
+    background: #fff;
   }
 
   @media (max-width: 900px) {
@@ -117,6 +133,7 @@
     }
     .column {
       flex: 1 1 100%;
+      margin-bottom: 30px;
     }
   }
 </style>
@@ -125,48 +142,32 @@
 
 <header>
   <h1>Wissenschaftliche Plakate</h1>
-  <p>Alle wissenschaftlichen Leitlinien & PDFs an einem Ort</p>
+  <p>Alle wissenschaftlichen Leitlinien & PDFs an einem Ort – Fokus: Leukämie</p>
 </header>
 
 <main>
   <h2 class="center">Willkommen</h2>
 
   <div class="columns">
-    <!-- Sol sütun: site linkleri -->
+    <!-- Sol sütun: Webseiten -->
     <div class="column">
       <h2 class="column-title">Webseiten</h2>
       <ul>
-        <li><a href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-promyelozyten-leukaemie-apl/@@guideline/html/index.html" target="_blank">APL Leitlinie (Onkopedia)</a></li>
-        <li><a href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-myeloische-leukaemie-aml/@@guideline/html/index.html" target="_blank">AML Leitlinie (Onkopedia)</a></li>
-        <li><a href="https://register.awmf.org/assets/guidelines/025-031l_S1_Akute-myeloische-Leukaemie%E2%80%93AML%E2%80%93Kinder-Jugendliche_2019-09-abgelaufen.pdf" target="_blank">AML für Kinder und Jugendliche</a></li>
-        <li><a href="https://register.awmf.org/assets/guidelines/025-014l_S1_Akute-lymphoblastische-Leukaemie-ALL-im-Kindesalter_2021-07.pdf" target="_blank">ALL bei Kindern</a></li>
+        <li><a class="button" href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-promyelozyten-leukaemie-apl/@@guideline/html/index.html" target="_blank">APL Leitlinie (Onkopedia)</a></li>
+        <li><a class="button" href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-myeloische-leukaemie-aml/@@guideline/html/index.html" target="_blank">AML Leitlinie (Onkopedia)</a></li>
+        <li><a class="button" href="https://register.awmf.org/assets/guidelines/025-031l_S1_Akute-myeloische-Leukaemie%E2%80%93AML%E2%80%93Kinder-Jugendliche_2019-09-abgelaufen.pdf" target="_blank">AML für Kinder und Jugendliche</a></li>
+        <li><a class="button" href="https://register.awmf.org/assets/guidelines/025-014l_S1_Akute-lymphoblastische-Leukaemie-ALL-im-Kindesalter_2021-07.pdf" target="_blank">ALL bei Kindern</a></li>
       </ul>
     </div>
 
-    <!-- Sağ sütun: PDF linkleri -->
+    <!-- Sağ sütun: PDF Dateien -->
     <div class="column">
       <h2 class="column-title">PDF Dateien</h2>
       <ul>
-        <li>
-          <a href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Deutschen%20Kinderkrebsregisters.pdf" target="_blank">
-            Deutschen Kinderkrebsregisters <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://raw.githubusercontent.com/taskesen22/Wissenschaftliche-Plakate/main/Krebs%20im%20Kindes-%20und%20Jugendalter%20in%20Deutschland.pdf" target="_blank">
-            Krebs im Kindes- und Jugendalter in Deutschland <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://raw.githubusercontent.com/taskesen22/Wissenschaftliche-Plakate/main/Versorgung%20mit%20CAR-T-Zellen%20in%20Deutschland.pdf" target="_blank">
-            Versorgung mit CAR-T-Zellen in Deutschland <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://raw.githubusercontent.com/taskesen22/Wissenschaftliche-Plakate/main/chronische-myeloische-leukaemie-cml.pdf" target="_blank">
-            chronische-myeloische-leukaemie-cml.pdf <span>(PDF herunterladen)</span>
-          </a>
-        </li>
+        <li><a class="button" href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Deutschen%20Kinderkrebsregisters.pdf" target="_blank">Deutschen Kinderkrebsregisters <span>(PDF herunterladen)</span></a></li>
+        <li><a class="button" href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Krebs%20im%20Kindes-%20und%20Jugendalter%20in%20Deutschland.pdf" target="_blank">Krebs im Kindes- und Jugendalter in Deutschland <span>(PDF herunterladen)</span></a></li>
+        <li><a class="button" href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Versorgung%20mit%20CAR-T-Zellen%20in%20Deutschland.pdf" target="_blank">Versorgung mit CAR-T-Zellen in Deutschland <span>(PDF herunterladen)</span></a></li>
+        <li><a class="button" href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/chronische-myeloische-leukaemie-cml.pdf" target="_blank">Chronische myeloische Leukämie (CML) <span>(PDF herunterladen)</span></a></li>
       </ul>
     </div>
   </div>
