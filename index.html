@@ -16,46 +16,29 @@
   }
 
   header {
-    position: relative;
     background-color: #6a1b9a;
     color: white;
-    padding: 60px 20px 100px 20px;
+    padding: 50px 20px 60px;
     text-align: center;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsTAAALEwEAmpwYAAACVklEQVR4nO3dQW7DIBAF0KYHT2v8fzquIOayEC/4MLMJCTzGYfLEpIQcXxcNDvfciG6rtbZ8CD1Y1AOR1CrKYY7wB4Yg+4EiA2jUuJ+AAzDruVYloKoKqrMStUvftBMY7gT3Q3yRql0mB9bMfeyGLP3+DeT2uqnEHjJ4hOabf+rH+Ag67At1QerT+36L6vm2x+/QfFZ/WuKZ+7++YOAs3R/+8HOIQvAON1k//aI60fJdP9ykv38Vb0HBA/X19Z0F5eD5neJ60f9A9/8EY5AogJoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyBUQJgDIAiBJAGAGoAyB+vfQX5+uKZnGVLkDjWzftjH1f47nsg5Zey0LVDLU4f4T3wlF8K8iJvD5w+O9a9Wz4cn0l+X+7c5MubH1XYG1HTZBu0O8jkDWmjvCsq3S+a9IhGj+RJoN6TsBT6YO6AsTz5ZOwP9G+MHXXE16PbXDnA1A72/R7k97+Cyb37ds6XuzmfkPPuHTxl5syPtjA1k4YPU+QF4Vt6cROp2yfIcZUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BrS9/Ll1jRBzjkljUAyC5BqX9e7/CAy6i7Ete8phvAAAAAElFTkSuQmCC');
-    background-size: 150px 150px;
-    background-repeat: no-repeat;
-    background-position: center top 30px;
-  }
-
-  header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(106,27,154, 0.6); /* mor overlay */
-    z-index: 1;
-  }
-
-  header h1, header p {
-    position: relative;
-    z-index: 2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 15px rgba(106,27,154,0.5);
   }
 
   header h1 {
-    font-size: 3rem;
-    margin: 80px 0 10px; /* görselin altına yazıyı çekmek için üst boşluk artırıldı */
+    font-size: 2.8rem;
+    margin: 0 0 10px;
   }
 
   header p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 0;
+    font-weight: 400;
   }
 
   main {
     max-width: 1000px;
-    margin: 80px auto;
+    margin: 60px auto;
     padding: 0 20px;
   }
 
@@ -77,7 +60,7 @@
     flex: 1 1 45%;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(106,27,154,0.1);
     padding: 30px;
   }
 
@@ -127,13 +110,22 @@
     background: #fff;
   }
 
+  /* Mobil uyumluluk */
   @media (max-width: 900px) {
     .columns {
       flex-direction: column;
+      gap: 40px;
     }
     .column {
       flex: 1 1 100%;
-      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
     }
   }
 </style>
