@@ -15,34 +15,40 @@
     color: #333;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
-  /* Dekoratif arka plan daireleri */
-  .bg-shape {
+  /* --- Hücreler (küçük daireler) --- */
+  .cell {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.2;
+    opacity: 0.25;
+    z-index: 0;
+  }
+  .cell.red1 { width: 80px; height: 80px; background: #e53935; top: 120px; left: 5%; }
+  .cell.red2 { width: 60px; height: 60px; background: #d32f2f; bottom: 180px; right: 10%; }
+  .cell.red3 { width: 100px; height: 100px; background: #f44336; top: 400px; right: 15%; }
+
+  /* --- DNA Helix (ince mavi çizgi) --- */
+  .dna {
+    position: absolute;
+    width: 180px; height: 500px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 500" fill="none" stroke="url(%23grad)" stroke-width="4" opacity="0.35"><defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="%23007bff"/><stop offset="1" stop-color="%2300c6ff"/></linearGradient></defs><path d="M50 0 Q150 125 50 250 Q150 375 50 500"/></svg>') no-repeat center;
+    top: 100px; left: 50%;
+    transform: translateX(-50%);
     z-index: 0;
   }
 
-  .circle1 {
-    width: 300px; height: 300px;
-    background: #007bff;
-    top: -100px; left: -100px;
+  /* --- Ribbon (küçük köşe simgesi) --- */
+  .ribbon {
+    position: absolute;
+    width: 100px; height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150" fill="orange" opacity="0.5"><path d="M50 10 C20 10, 20 60, 50 100 C80 60, 80 10, 50 10 Z M35 80 L65 120 L55 130 L25 90 Z"/></svg>') no-repeat center;
+    bottom: 30px; right: 30px;
+    z-index: 0;
   }
 
-  .circle2 {
-    width: 200px; height: 200px;
-    background: #00c6ff;
-    bottom: 50px; right: -80px;
-  }
-
-  .circle3 {
-    width: 150px; height: 150px;
-    background: #004aad;
-    top: 200px; right: 20%;
-  }
-
+  /* --- Header --- */
   header {
     background: linear-gradient(90deg, #004aad, #007bff);
     color: white;
@@ -65,6 +71,7 @@
     margin: 0;
   }
 
+  /* --- Main --- */
   main {
     max-width: 1000px;
     margin: 40px auto;
@@ -80,4 +87,131 @@
     color: #004aad;
   }
 
-  .column
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    flex: 1 1 45%;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 20px 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+  }
+
+  a:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #004aad, #007bff);
+  }
+
+  a span {
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+  }
+
+  h2.column-title {
+    color: #007bff;
+    margin-bottom: 20px;
+    border-left: 5px solid #004aad;
+    padding-left: 10px;
+    font-size: 1.5rem;
+  }
+
+  /* --- Footer --- */
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    font-size: 0.9em;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 900px) {
+    .columns {
+      flex-direction: column;
+    }
+    .column {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- --- Arka plan figürleri --- -->
+<div class="cell red1"></div>
+<div class="cell red2"></div>
+<div class="cell red3"></div>
+<div class="dna"></div>
+<div class="ribbon"></div>
+
+<header>
+  <h1>Wissenschaftliche Plakate</h1>
+  <p>Alle wissenschaftlichen Leitlinien & PDFs an einem Ort</p>
+</header>
+
+<main>
+  <h2 class="center">Willkommen</h2>
+
+  <div class="columns">
+    <div class="column">
+      <h2 class="column-title">Webseiten</h2>
+      <ul>
+        <li><a href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-promyelozyten-leukaemie-apl/@@guideline/html/index.html" target="_blank">APL Leitlinie (Onkopedia)</a></li>
+        <li><a href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-myeloische-leukaemie-aml/@@guideline/html/index.html" target="_blank">AML Leitlinie (Onkopedia)</a></li>
+        <li><a href="https://register.awmf.org/assets/guidelines/025-031l_S1_Akute-myeloische-Leukaemie%E2%80%93AML%E2%80%93Kinder-Jugendliche_2019-09-abgelaufen.pdf" target="_blank">AML für Kinder und Jugendliche</a></li>
+        <li><a href="https://register.awmf.org/assets/guidelines/025-014l_S1_Akute-lymphoblastische-Leukaemie-ALL-im-Kindesalter_2021-07.pdf" target="_blank">ALL bei Kindern</a></li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2 class="column-title">PDF Dateien</h2>
+      <ul>
+        <li><a href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Deutschen%20Kinderkrebsregisters.pdf" target="_blank">Die Kohorte der 41.000 Langzeitüberlebenden des Deutschen Kinderkrebsregister <span>(PDF herunterladen)</span></a></li>
+        <li><a href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Krebs%20im%20Kindes-%20und%20Jugendalter%20in%20Deutschland.pdf" target="_blank">Krebs im Kindes- und Jugendalter in Deutschland <span>(PDF herunterladen)</span></a></li>
+        <li><a href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Versorgung%20mit%20CAR-T-Zellen%20in%20Deutschland.pdf" target="_blank">Versorgung mit CAR-T-Zellen in Deutschland <span>(PDF herunterladen)</span></a></li>
+        <li><a href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/chronische-myeloische-leukaemie-cml.pdf" target="_blank">chronische-myeloische-leukaemie-cml.pdf <span>(PDF herunterladen)</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 Wissenschaftliche Plakate
+</footer>
+
+</body>
+</html>
