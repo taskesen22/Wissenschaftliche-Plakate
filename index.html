@@ -13,6 +13,34 @@
     padding: 0;
     background: linear-gradient(135deg, #e0f7fa, #fff9c4);
     color: #333;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Dekoratif arka plan daireleri */
+  .bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  .circle1 {
+    width: 300px; height: 300px;
+    background: #007bff;
+    top: -100px; left: -100px;
+  }
+
+  .circle2 {
+    width: 200px; height: 200px;
+    background: #00c6ff;
+    bottom: 50px; right: -80px;
+  }
+
+  .circle3 {
+    width: 150px; height: 150px;
+    background: #004aad;
+    top: 200px; right: 20%;
   }
 
   header {
@@ -23,6 +51,8 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: relative;
+    z-index: 1;
   }
 
   header h1 {
@@ -39,6 +69,8 @@
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
   }
 
   h2.center {
@@ -48,134 +80,4 @@
     color: #004aad;
   }
 
-  .columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .column {
-    flex: 1 1 45%;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    margin: 20px 0;
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #007bff, #00c6ff);
-    padding: 15px 20px;
-    border-radius: 15px;
-    font-weight: 700;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    transition: all 0.4s ease;
-  }
-
-  a:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-  }
-
-  a span {
-    font-weight: 400;
-    font-size: 0.9rem;
-    display: block;
-    margin-top: 5px;
-  }
-
-  h2.column-title {
-    color: #007bff;
-    margin-bottom: 20px;
-    border-left: 5px solid #004aad;
-    padding-left: 10px;
-    font-size: 1.5rem;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #555;
-    font-size: 0.9em;
-    border-top: 1px solid #ddd;
-    margin-top: 50px;
-  }
-
-  @media (max-width: 900px) {
-    .columns {
-      flex-direction: column;
-    }
-    .column {
-      flex: 1 1 100%;
-    }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>Wissenschaftliche Plakate</h1>
-  <p>Alle wissenschaftlichen Leitlinien & PDFs an einem Ort</p>
-</header>
-
-<main>
-  <h2 class="center">Willkommen</h2>
-
-  <div class="columns">
-    <!-- Sol sütun: site linkleri -->
-    <div class="column">
-      <h2 class="column-title">Webseiten</h2>
-      <ul>
-        <li><a href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-promyelozyten-leukaemie-apl/@@guideline/html/index.html" target="_blank">APL Leitlinie (Onkopedia)</a></li>
-        <li><a href="https://www.onkopedia.com/de/onkopedia/guidelines/akute-myeloische-leukaemie-aml/@@guideline/html/index.html" target="_blank">AML Leitlinie (Onkopedia)</a></li>
-        <li><a href="https://register.awmf.org/assets/guidelines/025-031l_S1_Akute-myeloische-Leukaemie%E2%80%93AML%E2%80%93Kinder-Jugendliche_2019-09-abgelaufen.pdf" target="_blank">AML für Kinder und Jugendliche</a></li>
-        <li><a href="https://register.awmf.org/assets/guidelines/025-014l_S1_Akute-lymphoblastische-Leukaemie-ALL-im-Kindesalter_2021-07.pdf" target="_blank">ALL bei Kindern</a></li>
-      </ul>
-    </div>
-
-    <!-- Sağ sütun: PDF linkleri -->
-    <div class="column">
-      <h2 class="column-title">PDF Dateien</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/taskesen22/Wissenschaftliche-Plakate/blob/main/Deutschen%20Kinderkrebsregisters.pdf" target="_blank">
-            Deutschen Kinderkrebsregisters <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://raw.githubusercontent.com/taskesen22/Wissenschaftliche-Plakate/main/Krebs%20im%20Kindes-%20und%20Jugendalter%20in%20Deutschland.pdf" target="_blank">
-            Krebs im Kindes- und Jugendalter in Deutschland <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://raw.githubusercontent.com/taskesen22/Wissenschaftliche-Plakate/main/Versorgung%20mit%20CAR-T-Zellen%20in%20Deutschland.pdf" target="_blank">
-            Versorgung mit CAR-T-Zellen in Deutschland <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://raw.githubusercontent.com/taskesen22/Wissenschaftliche-Plakate/main/chronische-myeloische-leukaemie-cml.pdf" target="_blank">
-            chronische-myeloische-leukaemie-cml.pdf <span>(PDF herunterladen)</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  &copy; 2025 Wissenschaftliche Plakate
-</footer>
-
-</body>
-</html>
+  .column
